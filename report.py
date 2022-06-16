@@ -20,10 +20,12 @@ def callback(ch, method, properties, body):
     Product: {payload.get('product')} 
     Quantity: {payload.get('quantity')}
     """)
-    print('[x] Done')
+    print('[x] Donesdsdsdsdsdsd')
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
 
-channel.basic_consume(on_message_callback=callback, queue=queue_name)
+# todo finish it
+channel.basic_consume(on_message_callback=callback,
+                      queue=queue_name)
 print('[*] waiting for notify messages.To exit pres Ctril c')
 channel.start_consuming()
