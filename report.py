@@ -21,6 +21,7 @@ def callback(ch, method, properties, body):
     Quantity: {payload.get('quantity')}
     """)
     print('[x] Done')
+    print("checking for head in gt history")
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
 
